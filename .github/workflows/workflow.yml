@@ -16,7 +16,7 @@ jobs:
         xcode-version: ${{ matrix.xcode-version }}
         apple-id: bot@sinoru.io
         apple-id-password: ${{ secrets.APPLE_ID_PASSWORD }}
-  
+
   run-without-checkout:
     name: Run without checkout
     runs-on: ${{ matrix.operating-system }}
@@ -26,9 +26,8 @@ jobs:
         xcode-version: ["10.0", "10.3", "11.0", "11.1", "11.2.1"]
     steps:
     - name: Setup Xcode
-      uses: sinoru/actions-setup-xcode@${{ github.sha }}
+      uses: sinoru/actions-setup-xcode@master
       with:
         xcode-version: ${{ matrix.xcode-version }}
         apple-id: bot@sinoru.io
         apple-id-password: ${{ secrets.APPLE_ID_PASSWORD }}
-
