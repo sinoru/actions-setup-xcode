@@ -1,8 +1,11 @@
 # actions-setup-xcode
 
 <p align="left">
-  <a href="https://github.com/sinoru/actions-setup-xcode"><img alt="GitHub Actions status" src="https://github.com/sinoru/actions-setup-xcode/workflows/Main%20workflow/badge.svg"></a>
+  <a href="https://github.com/sinoru/actions-setup-xcode/actions"><img alt="test status" src="https://github.com/sinoru/actions-setup-xcode/workflows/build-test/badge.svg"></a>
+
+  <a href="https://github.com/sinoru/actions-setup-xcode/actions"><img alt="versions status" src="https://github.com/sinoru/actions-setup-xcode/workflows/xcode-versions/badge.svg"></a>  
 </p>
+
 
 This action sets up a Xcode environment for use in actions by:
 
