@@ -26,4 +26,6 @@ jobs:
           xcode-version: ${{ matrix.xcode-version }}
           apple-id: bot@sinoru.io
           apple-id-password: ${{ secrets.APPLE_ID_PASSWORD }}
+        env:
+          SPACESHIP_SKIP_2FA_UPGRADE: 1
       - run: xcodebuild -version
