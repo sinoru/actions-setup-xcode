@@ -1,7 +1,7 @@
 {
-  "name": "actions-setup-swift",
-  "version": "2.0.2",
-  "description": "Setup a Swift environment and optionally downloading and adding it to the PATH",
+  "name": "actions-setup-xcode",
+  "version": "2.0.0",
+  "description": "Setup a Xcode environment and optionally downloading",
   "main": "index.mjs",
   "scripts": {
     "lint": "eslint .",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sinoru/actions-setup-swift.git"
+    "url": "git+https://github.com/sinoru/actions-setup-xcode.git"
   },
   "keywords": [
     "GitHub",
@@ -21,9 +21,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sinoru/actions-setup-swift/issues"
+    "url": "https://github.com/sinoru/actions-setup-xcode/issues"
   },
-  "homepage": "https://github.com/sinoru/actions-setup-swift#readme",
+  "homepage": "https://github.com/sinoru/actions-setup-xcode#readme",
   "dependencies": {
     "@actions/core": "^1.2.5",
     "@actions/exec": "^1.0.4"
