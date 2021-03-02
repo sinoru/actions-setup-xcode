@@ -16,6 +16,7 @@ jobs:
   test:
     runs-on: ${{ matrix.operating-system }}
     strategy:
+      fail-fast: false
       matrix:
         operating-system: [macos-latest]
         xcode-version: ["10.0", "10.3", "11.0", "11.5", "12.0"]
