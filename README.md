@@ -1,8 +1,7 @@
 # actions-setup-xcode
 
-<p align="left">
-  <a href="https://github.com/sinoru/actions-setup-xcode"><img alt="GitHub Actions status" src="https://github.com/sinoru/actions-setup-xcode/workflows/Main%20workflow/badge.svg"></a>
-</p>
+[![Unit Tests](https://github.com/sinoru/actions-setup-xcode/actions/workflows/units.yml/badge.svg)](https://github.com/sinoru/actions-setup-xcode/actions/workflows/test.yml)
+[![Tests](https://github.com/sinoru/actions-setup-xcode/actions/workflows/tests.yml/badge.svg)](https://github.com/sinoru/actions-setup-xcode/actions/workflows/test.yml)
 
 This action sets up a Xcode environment for use in actions by:
 
@@ -31,4 +30,4 @@ The scripts and documentation in this project are released under the [MIT Licens
 
 # Contributions
 
-Contributions are welcome!  See [Contributor's Guide](docs/contributors.md)
+Contributions are welcome!  See [Contributor's Guide](CONTRIBUTING.md)
