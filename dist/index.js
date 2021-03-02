@@ -55,7 +55,7 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
 // most @actions toolkit packages have async methods
 async function run() {
   try {
-    let xcodeVersion = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('xcode-version');
+    let xcodeVersion = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('xcode-version', { required: true });
     let appleID = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('apple-id');
     let appleIDPassword = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('apple-id-password');
 
