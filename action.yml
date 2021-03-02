@@ -1,9 +1,8 @@
-name: 'Setup Xcode'
-description: 'Set up a specific version of Xcode and selecting it'
+name: 'Setup Xcode environment'
+description: 'Setup a Xcode environment and optionally downloading'
 branding:
   icon: 'feather'
   color: 'orange'
-author: 'Jaehong Kang'
 inputs: 
   xcode-version:
     description: 'Exact version of a Ruby version to use.'
@@ -16,4 +15,4 @@ inputs:
     optional: true
 runs:
   using: 'node12'
-  main: 'lib/setup-xcode.js'
+  main: 'dist/index.js'
