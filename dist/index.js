@@ -37,6 +37,8 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
       throw new Error(`apple-id-password is required to download Xcode.`);
     }
 
+    _actions_core__WEBPACK_IMPORTED_MODULE_0__.startGroup('Install Xcode');
+
     await _actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec('xcversion', ['install', xcodeVersion], {
       cwd: process.env.TMPDIR,
       env: {
@@ -45,6 +47,8 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
         XCODE_INSTALL_PASSWORD: appleIDPassword
       }
     });
+
+    _actions_core__WEBPACK_IMPORTED_MODULE_0__.endGroup();
 
     await _actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec('xcversion', ['select', xcodeVersion]);
   }
