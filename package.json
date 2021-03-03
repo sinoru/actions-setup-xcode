@@ -1,48 +1,36 @@
 {
-  "name": "setup-xcode",
-  "version": "1.1.2",
-  "private": true,
-  "description": "setup xcode action",
-  "main": "lib/setup-xcode.js",
+  "name": "actions-setup-xcode",
+  "version": "2.0.0",
+  "description": "Setup a Xcode environment and optionally downloading",
+  "main": "index.mjs",
   "scripts": {
-    "build": "tsc",
-    "format": "prettier --write **/*.ts",
-    "format-check": "prettier --check **/*.ts",
-    "test": "jest"
+    "lint": "eslint .",
+    "prepare": "ncc build index.mjs -o dist --source-map --license licenses.txt",
+    "test": "jest",
+    "all": "npm run lint && npm run prepare && npm run test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sinoru/actions-setup-xcode.git"
   },
   "keywords": [
-    "actions",
-    "xcode",
-    "setup"
+    "GitHub",
+    "Actions",
+    "JavaScript"
   ],
-  "author": "GitHub",
+  "author": "",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sinoru/actions-setup-xcode/issues"
+  },
+  "homepage": "https://github.com/sinoru/actions-setup-xcode#readme",
   "dependencies": {
-    "@actions/core": "^1.2.4",
-    "@actions/exec": "^1.0.4",
-    "semver": "^6.1.1"
+    "@actions/core": "^1.2.5",
+    "@actions/exec": "^1.0.4"
   },
   "devDependencies": {
-    "@actions/io": "^1.0.2",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.49",
-    "@types/semver": "^6.2.1",
-    "husky": "^2.3.0",
-    "jest": "^26.1.0",
-    "jest-circus": "^26.1.0",
-    "prettier": "^1.19.1",
-    "ts-jest": "^26.1.1",
-    "typescript": "^3.9.6"
-  },
-  "husky": {
-    "skipCI": true,
-    "hooks": {
-      "pre-commit": "npm run build && npm run format",
-      "post-commit": "npm prune --production && git add node_modules/* && git commit -m \"Husky commit correct node modules\""
-    }
+    "@vercel/ncc": "^0.27.0",
+    "eslint": "^7.21.0",
+    "jest": "^26.6.3"
   }
 }

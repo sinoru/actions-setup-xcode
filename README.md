@@ -1,11 +1,7 @@
 # actions-setup-xcode
 
-<p align="left">
-  <a href="https://github.com/sinoru/actions-setup-xcode/actions"><img alt="test status" src="https://github.com/sinoru/actions-setup-xcode/workflows/build-test/badge.svg"></a>
-
-  <a href="https://github.com/sinoru/actions-setup-xcode/actions"><img alt="versions status" src="https://github.com/sinoru/actions-setup-xcode/workflows/xcode-versions/badge.svg"></a>  
-</p>
-
+[![Unit Tests](https://github.com/sinoru/actions-setup-xcode/actions/workflows/units.yml/badge.svg)](https://github.com/sinoru/actions-setup-xcode/actions/workflows/test.yml)
+[![Tests](https://github.com/sinoru/actions-setup-xcode/actions/workflows/tests.yml/badge.svg)](https://github.com/sinoru/actions-setup-xcode/actions/workflows/test.yml)
 
 This action sets up a Xcode environment for use in actions by:
 
@@ -20,7 +16,7 @@ Basic:
 ```yaml
 steps:
 - uses: actions/checkout@master
-- uses: sinoru/actions-setup-xcode@v1.1
+- uses: sinoru/actions-setup-xcode@v2
   with:
     xcode-version: '11.2.1' # Exact version of a Xcode version to use
     apple-id: 'bot@sinoru.io' # Apple ID to download from Apple Developer when Xcode not available in local
@@ -34,4 +30,4 @@ The scripts and documentation in this project are released under the [MIT Licens
 
 # Contributions
 
-Contributions are welcome!  See [Contributor's Guide](docs/contributors.md)
+Contributions are welcome!  See [Contributor's Guide](CONTRIBUTING.md)
