@@ -8,6 +8,6 @@ test('test runs', () => {
     ...process.env,
     'INPUT_XCODE-VERSION': '12.4'
   };
-  const ip = path.join(__dirname, 'index.js');
+  const ip = path.join(__dirname, 'index.mjs');
   console.log(cp.execFileSync('node', [ip], {env}).toString());
 });
