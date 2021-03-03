@@ -5,11 +5,13 @@ on:
       - '.github/workflows/units.yml'
       - '**/*.js'
       - '**/*.mjs'
+      - 'package*.json'
   pull_request:
     paths:
       - '.github/workflows/units.yml'
       - '**/*.js'
       - '**/*.mjs'
+      - 'package*.json'
 
 jobs:
   # unit tests
