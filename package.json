@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "prepare": "ncc build index.mjs -o dist --source-map --license licenses.txt",
-    "test": "jest --detectOpenHandles",
+    "test": "jest --detectOpenHandles --forceExit",
     "all": "npm run lint && npm run prepare && npm run test"
   },
   "repository": {
