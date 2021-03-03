@@ -9,5 +9,5 @@ test('test runs', () => {
     'INPUT_XCODE-VERSION': '12.4'
   };
   const ip = path.join(__dirname, 'index.js');
-  console.log(cp.execFileSync('node', [ip],, {env}).toString());
+  console.log(cp.execFileSync('node', [ip], {env}).toString());
 });
