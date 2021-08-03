@@ -44,7 +44,8 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
       env: {
         ...process.env,
         XCODE_INSTALL_USER: appleID,
-        XCODE_INSTALL_PASSWORD: appleIDPassword
+        XCODE_INSTALL_PASSWORD: appleIDPassword,
+        SPACESHIP_SKIP_2FA_UPGRADE: 1,
       }
     });
 
