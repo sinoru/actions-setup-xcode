@@ -8,6 +8,8 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
     throw new Error(`${process.platform} is not supported!`);
   }
 
+  await exec.exec('xcversion', ['update'])
+
   if (
     (await exec.exec('xcversion', ['select', xcodeVersion], {
       ignoreReturnCode: true

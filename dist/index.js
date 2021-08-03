@@ -22,6 +22,8 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
     throw new Error(`${process.platform} is not supported!`);
   }
 
+  await _actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec('xcversion', ['update'])
+
   if (
     (await _actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec('xcversion', ['select', xcodeVersion], {
       ignoreReturnCode: true
