@@ -39,7 +39,15 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
 
     _actions_core__WEBPACK_IMPORTED_MODULE_0__.startGroup('Install Xcode');
 
-    await _actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec('xcversion', ['update'])
+    await _actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec('xcversion', ['update'], {
+      cwd: process.env.TMPDIR,
+      env: {
+        ...process.env,
+        XCODE_INSTALL_USER: appleID,
+        XCODE_INSTALL_PASSWORD: appleIDPassword,
+        SPACESHIP_SKIP_2FA_UPGRADE: 1,
+      }
+    });
     await _actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec('xcversion', ['install', xcodeVersion], {
       cwd: process.env.TMPDIR,
       env: {

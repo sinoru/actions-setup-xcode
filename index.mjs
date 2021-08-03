@@ -25,7 +25,15 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
 
     core.startGroup('Install Xcode');
 
-    await exec.exec('xcversion', ['update'])
+    await exec.exec('xcversion', ['update'], {
+      cwd: process.env.TMPDIR,
+      env: {
+        ...process.env,
+        XCODE_INSTALL_USER: appleID,
+        XCODE_INSTALL_PASSWORD: appleIDPassword,
+        SPACESHIP_SKIP_2FA_UPGRADE: 1,
+      }
+    });
     await exec.exec('xcversion', ['install', xcodeVersion], {
       cwd: process.env.TMPDIR,
       env: {
