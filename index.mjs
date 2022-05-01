@@ -1,8 +1,5 @@
-import path from 'path';
-import fs from 'fs';
 import core from '@actions/core';
 import exec from '@actions/exec';
-import tc from '@actions/tool-cache';
 
 async function installXcode(xcodeVersion, appleID, appleIDPassword) {
   const IS_MACOS = process.platform === 'darwin';
@@ -37,16 +34,7 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
         SPACESHIP_SKIP_2FA_UPGRADE: 1,
       }
     });
-
-    const tempDirectory = process.env['RUNNER_TEMP'];
-    const downloadURL = path.join(tempDirectory, `Xcode-${xcodeVersion}.xip`);
-
-    const cachedURL = tc.find('Xcode', xcodeVersion); 
-    if (cachedURL != null) {
-      core.info(`Found in cache @ ${cachedURL}`);
-    }
-
-    await exec.exec('xcversion', ['install', xcodeVersion, `--url=file://${cachedURL || downloadURL}`, '--no-clean'], {
+    await exec.exec('xcversion', ['install', xcodeVersion], {
       cwd: process.env.TMPDIR,
       env: {
         ...process.env,
@@ -55,10 +43,6 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
         SPACESHIP_SKIP_2FA_UPGRADE: 1,
       }
     });
-
-    if (fs.statSync(downloadURL).isFile()) {
-      tc.cacheFile(downloadURL, `Xcode-${xcodeVersion}.xip`, 'Xcode', xcodeVersion);
-    }
 
     core.endGroup();
 
