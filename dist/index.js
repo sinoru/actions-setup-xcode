@@ -63,7 +63,7 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
       _actions_core__WEBPACK_IMPORTED_MODULE_2__.info(`Found in cache @ ${cachedURL}`);
     }
 
-    await _actions_exec__WEBPACK_IMPORTED_MODULE_3__.exec('xcversion', ['install', xcodeVersion, '--url', cachedURL || downloadURL, '--no-clean'], {
+    await _actions_exec__WEBPACK_IMPORTED_MODULE_3__.exec('xcversion', ['install', xcodeVersion, `--url=${cachedURL || downloadURL}`, '--no-clean'], {
       cwd: process.env.TMPDIR,
       env: {
         ...process.env,

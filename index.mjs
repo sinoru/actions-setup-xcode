@@ -46,7 +46,7 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
       core.info(`Found in cache @ ${cachedURL}`);
     }
 
-    await exec.exec('xcversion', ['install', xcodeVersion, '--url', cachedURL || downloadURL, '--no-clean'], {
+    await exec.exec('xcversion', ['install', xcodeVersion, `--url=${cachedURL || downloadURL}`, '--no-clean'], {
       cwd: process.env.TMPDIR,
       env: {
         ...process.env,
