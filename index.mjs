@@ -32,6 +32,7 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
         XCODE_INSTALL_USER: appleID,
         XCODE_INSTALL_PASSWORD: appleIDPassword,
         SPACESHIP_SKIP_2FA_UPGRADE: 1,
+        SPACESHIP_ONLY_ALLOW_INTERACTIVE_2FA: 1,
       }
     });
     await exec.exec('xcversion', ['install', xcodeVersion], {
@@ -41,6 +42,7 @@ async function installXcode(xcodeVersion, appleID, appleIDPassword) {
         XCODE_INSTALL_USER: appleID,
         XCODE_INSTALL_PASSWORD: appleIDPassword,
         SPACESHIP_SKIP_2FA_UPGRADE: 1,
+        SPACESHIP_ONLY_ALLOW_INTERACTIVE_2FA: 1,
       }
     });
 
