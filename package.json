@@ -1,6 +1,6 @@
 {
   "name": "actions-setup-xcode",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Setup a Xcode environment and optionally downloading",
   "main": "index.mjs",
   "scripts": {
